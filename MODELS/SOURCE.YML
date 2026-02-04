@@ -1,1 +1,38 @@
 
+version: 2
+
+sources:
+  - name: customer_source
+    database: SNOWFLAKE_SAMPLE_DATA       
+    schema: TPCDS_SF100TCL             
+
+    tables:
+      - name: CUSTOMER        
+        description: "Customer master raw table"
+
+        columns:
+          - name: C_CUSTOMER_SK
+            tests:
+              - not_null
+              - unique
+
+          - name: C_CUSTOMER_ID
+            tests:
+              - not_null
+
+          - name: C_CURRENT_CDEMO_SK
+          - name: C_CURRENT_HDEMO_SK
+          - name: C_CURRENT_ADDR_SK
+          - name: C_FIRST_SHIPTO_DATE_SK
+          - name: C_FIRST_SALES_DATE_SK
+          - name: C_SALUTATION
+          - name: C_FIRST_NAME
+          - name: C_LAST_NAME
+          - name: C_PREFERRED_CUST_FLAG
+          - name: C_BIRTH_DAY
+          - name: C_BIRTH_MONTH
+          - name: C_BIRTH_YEAR
+          - name: C_BIRTH_COUNTRY
+          - name: C_LOGIN
+          - name: C_EMAIL_ADDRESS
+          - name: C_LAST_REVIEW_DATE
